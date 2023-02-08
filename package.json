@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/Hi-Windom/vite-plugin-electron-renderer.git"
   },
-  "author": "soltus <694357845@qq.com>",
+  "author": "soltus",
   "license": "MIT",
   "scripts": {
     "dev": "vite build --watch",
@@ -27,6 +27,7 @@
     "lib-esm": "~0.3.0"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "esbuild": "^0.16.11",
     "rollup": "^3.8.1",
     "typescript": "^4.9.4",
