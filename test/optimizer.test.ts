@@ -26,14 +26,14 @@ describe('src/build-config', async () => {
     const aliases: Alias[] = [
       {
         find: 'electron',
-        replacement: 'vite-plugin-electron-renderer/electron-renderer',
+        replacement: '@sillot/vite-plugin-electron-renderer/electron-renderer',
       },
       ...builtins
         .filter(m => m !== 'electron')
         .filter(m => !m.startsWith('node:'))
         .map<Alias>(m => ({
           find: new RegExp(`^(node:)?${m}$`),
-          replacement: `vite-plugin-electron-renderer/builtins/${m}`,
+          replacement: `@sillot/vite-plugin-electron-renderer/builtins/${m}`,
         })),
     ]
     for (const alias of aliases) {
@@ -47,8 +47,8 @@ describe('src/build-config', async () => {
       'electron',
       ...modules,
       ...modules.map(mod => `node:${mod}`),
-      'vite-plugin-electron-renderer/electron-renderer',
-      ...modules.map(m => `vite-plugin-electron-renderer/builtins/${m}`),
+      '@sillot/vite-plugin-electron-renderer/electron-renderer',
+      ...modules.map(m => `@sillot/vite-plugin-electron-renderer/builtins/${m}`),
     ]
     expect(resolved.optimizeDeps.exclude).toEqual(exclude)
   })
