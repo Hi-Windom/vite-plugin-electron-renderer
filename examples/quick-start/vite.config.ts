@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import electron from 'vite-plugin-electron'
-import renderer from 'vite-plugin-electron-renderer'
+import renderer from '@sillot/vite-plugin-electron-renderer'
 import pkg from './package.json'
 
 export default defineConfig({

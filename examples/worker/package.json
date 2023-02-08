@@ -20,7 +20,7 @@
     "electron-builder": "^23.6.0",
     "typescript": "^4.9.4",
     "vite-plugin-electron": "^0.11.1",
-    "vite-plugin-electron-renderer": "workspace:*",
+    "@sillot/vite-plugin-electron-renderer": "workspace:*",
     "vite": "^4.0.3"
   }
 }

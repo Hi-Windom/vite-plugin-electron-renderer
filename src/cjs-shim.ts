@@ -4,7 +4,7 @@ export default function cjsShim(): Plugin {
   let config: ResolvedConfig
 
   return {
-    name: 'vite-plugin-electron-renderer:cjs-shim',
+    name: '@sillot/vite-plugin-electron-renderer:cjs-shim',
     apply: 'build',
     configResolved(_config) {
       config = _config

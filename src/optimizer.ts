@@ -24,7 +24,7 @@ export type DepOptimizationOptions = {
 
 const cjs_require = createRequire(import.meta.url)
 const CACHE_DIR = '.vite-electron-renderer'
-const name = 'vite-plugin-electron-renderer:optimizer'
+const name = '@sillot/vite-plugin-electron-renderer:optimizer'
 
 let root: string
 let node_modules_path: string
@@ -44,14 +44,14 @@ export default function optimizer(options: DepOptimizationOptions = {}): Plugin[
         const aliases: Alias[] = [
           {
             find: 'electron',
-            replacement: 'vite-plugin-electron-renderer/electron-renderer',
+            replacement: '@sillot/vite-plugin-electron-renderer/electron-renderer',
           },
           ...builtins
             .filter(m => m !== 'electron')
             .filter(m => !m.startsWith('node:'))
             .map<Alias>(m => ({
               find: new RegExp(`^(node:)?${m}$`),
-              replacement: `vite-plugin-electron-renderer/builtins/${m}`,
+              replacement: `@sillot/vite-plugin-electron-renderer/builtins/${m}`,
             })),
         ]
 

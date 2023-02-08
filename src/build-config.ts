@@ -10,7 +10,7 @@ export const builtins = [
 
 export default function buildConfig(nodeIntegration?: boolean): Plugin {
   return {
-    name: 'vite-plugin-electron-renderer:build-config',
+    name: '@sillot/vite-plugin-electron-renderer:build-config',
     apply: 'build',
     config(config) {
       // Make sure that Electron can be loaded into the local file using `loadFile` after packaging

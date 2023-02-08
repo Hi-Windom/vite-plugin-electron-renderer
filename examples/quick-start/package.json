@@ -28,6 +28,6 @@
     "node-fetch": "^3.3.0",
     "vite": "^4.0.3",
     "vite-plugin-electron": "^0.11.1",
-    "vite-plugin-electron-renderer": "workspace:*"
+    "@sillot/vite-plugin-electron-renderer": "workspace:*"
   }
 }
