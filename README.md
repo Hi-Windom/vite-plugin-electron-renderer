@@ -2,10 +2,12 @@
 
 Support use Node.js API in Electron-Renderer
 
-[![NPM version](https://img.shields.io/npm/v/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/vite-plugin-electron-renderer)
-[![NPM Downloads](https://img.shields.io/npm/dm/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/vite-plugin-electron-renderer)
+[![NPM version](https://img.shields.io/npm/v/@sillot/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/@sillot/vite-plugin-electron-renderer)
+[![NPM Downloads](https://img.shields.io/npm/dm/@sillot/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/@sillot/vite-plugin-electron-renderer)
 
-English | [简体中文](https://github.com/electron-vite/vite-plugin-electron-renderer/blob/main/README.zh-CN.md)
+English | [简体中文](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/main/README.zh-CN.md)
+
+注意：这是专门适用于 [Sillot](https://github.com/Hi-Windom/Sillot) 的 fork，源 [repo](https://github.com/electron-vite/vite-plugin-electron-renderer)
 
 ## Install
 
@@ -15,8 +17,8 @@ npm i vite-plugin-electron-renderer -D
 
 ## Examples
 
-- [quick-start](https://github.com/electron-vite/vite-plugin-electron-renderer/tree/main/examples/quick-start)
-- [worker](https://github.com/electron-vite/vite-plugin-electron-renderer/tree/main/examples/worker)
+- [quick-start](https://github.com/Hi-Windom/vite-plugin-electron-renderer/tree/main/examples/quick-start)
+- [worker](https://github.com/Hi-Windom/vite-plugin-electron-renderer/tree/main/examples/worker)
 
 ## Usage
 
@@ -131,10 +133,10 @@ Pre-bundling: got
 
 **In general**, Vite may not correctly build Node.js packages, especially Node.js C/C++ native modules, but Vite can load them as external packages.  
 Unless you know how to properly build them with Vite.  
-[See example](https://github.com/electron-vite/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L14-L23)
+[See example](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L14-L23)
 
 **By the way**. If an npm package is a pure ESM format package, and the packages it depends on are also in ESM format, then put it in `optimizeDeps.exclude` and it will work normally.  
-[See an explanation of it](https://github.com/electron-vite/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L33-L36)
+[See an explanation of it](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L33-L36)
 
 ## `dependencies` vs `devDependencies`
 
