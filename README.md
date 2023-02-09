@@ -12,7 +12,7 @@ English | [简体中文](https://github.com/Hi-Windom/vite-plugin-electron-rende
 ## Install
 
 ```sh
-npm i vite-plugin-electron-renderer -D
+npm i @sillot/vite-plugin-electron-renderer -D
 ```
 
 ## Examples
@@ -25,7 +25,7 @@ npm i vite-plugin-electron-renderer -D
 vite.config.ts
 
 ```js
-import renderer from 'vite-plugin-electron-renderer'
+import renderer from '@sillot/vite-plugin-electron-renderer'
 
 export default {
   plugins: [
@@ -131,11 +131,11 @@ Pre-bundling: got
 
 #### The Why
 
-**In general**, Vite may not correctly build Node.js packages, especially Node.js C/C++ native modules, but Vite can load them as external packages.  
-Unless you know how to properly build them with Vite.  
+**In general**, Vite may not correctly build Node.js packages, especially Node.js C/C++ native modules, but Vite can load them as external packages.
+Unless you know how to properly build them with Vite.
 [See example](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L14-L23)
 
-**By the way**. If an npm package is a pure ESM format package, and the packages it depends on are also in ESM format, then put it in `optimizeDeps.exclude` and it will work normally.  
+**By the way**. If an npm package is a pure ESM format package, and the packages it depends on are also in ESM format, then put it in `optimizeDeps.exclude` and it will work normally.
 [See an explanation of it](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/v0.10.3/examples/quick-start/vite.config.ts#L33-L36)
 
 ## `dependencies` vs `devDependencies`
