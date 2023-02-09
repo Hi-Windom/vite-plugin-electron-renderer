@@ -27,7 +27,7 @@ export type DepOptimizationOptions = {
 }
 
 const cjs_require = createRequire(import.meta.url)
-const CACHE_DIR = '.vite-electron-renderer'
+const CACHE_DIR = '@sillot/vite-electron-renderer'
 
 let node_modules_path: string
 let cache: Cache
