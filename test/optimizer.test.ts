@@ -8,7 +8,7 @@ import optimizer from '../src/optimizer'
 
 
 var require = createRequire(import.meta.url)
-const cacheDir = path.join(node_modules(process.cwd())[0], '.@sillot/vite-electron-renderer')
+const cacheDir = path.join(node_modules(process.cwd())[0], '@sillot/vite-electron-renderer')
 fs.rmSync(cacheDir, { recursive: true, force: true })
 
 test('src/optimizer.ts', async () => {
