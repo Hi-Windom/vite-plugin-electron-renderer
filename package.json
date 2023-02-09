@@ -1,6 +1,6 @@
 {
   "name": "@sillot/vite-plugin-electron-renderer",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Support use Node.js API in Electron-Renderer",
   "main": "index.mjs",
   "types": "types",
@@ -39,7 +39,6 @@
     "types",
     "index.mjs",
     "index.js",
-    "electron-renderer.js",
     "builtins"
   ],
   "keywords": [

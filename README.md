@@ -1,11 +1,30 @@
-# vite-plugin-electron-renderer
+<p align="center">
+  <img width="170" src="https://github.com/electron-vite/vite-plugin-electron/blob/main/logo.svg?raw=true">
+</p>
+<div align="center">
+  <h1>vite-plugin-electron-renderer</h1>
+</div>
+<p align="center">Support use Node.js API in Electron-Renderer</p>
+<p align="center">
+  <a href="https://npmjs.com/package/@sillot/vite-plugin-electron-renderer">
+    <img src="https://img.shields.io/npm/v/@sillot/vite-plugin-electron-renderer.svg">
+  </a>
+  <a href="https://npmjs.com/package/@sillot/vite-plugin-electron-renderer">
+    <img src="https://img.shields.io/npm/dm/@sillot/vite-plugin-electron-renderer.svg">
+  </a>
+  <a href="https://discord.gg/YfjFuEgVUR">
+    <img src="https://img.shields.io/badge/chat-discord-blue?logo=discord">
+  </a>
+</p>
+<p align="center">
+  <strong>
+    <span>English</span>
+    |
+    <a href="https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/main/README.zh-CN.md">简体中文</a>
+  </strong>
+</p>
 
-Support use Node.js API in Electron-Renderer
-
-[![NPM version](https://img.shields.io/npm/v/@sillot/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/@sillot/vite-plugin-electron-renderer)
-[![NPM Downloads](https://img.shields.io/npm/dm/@sillot/vite-plugin-electron-renderer.svg)](https://npmjs.org/package/@sillot/vite-plugin-electron-renderer)
-
-English | [简体中文](https://github.com/Hi-Windom/vite-plugin-electron-renderer/blob/main/README.zh-CN.md)
+<br/>
 
 注意：这是专门适用于 [Sillot](https://github.com/Hi-Windom/Sillot) 的 fork，源 [repo](https://github.com/electron-vite/vite-plugin-electron-renderer)
 
@@ -17,6 +36,7 @@ npm i @sillot/vite-plugin-electron-renderer -D
 
 ## Examples
 
+- [electron-forge](https://github.com/electron-vite/vite-plugin-electron-renderer/tree/main/examples/electron-forge) - use in [Electron Forge](https://www.electronforge.io/) scaffolds.
 - [quick-start](https://github.com/Hi-Windom/vite-plugin-electron-renderer/tree/main/examples/quick-start)
 - [worker](https://github.com/Hi-Windom/vite-plugin-electron-renderer/tree/main/examples/worker)
 
@@ -80,27 +100,28 @@ export interface RendererOptions {
 > Load Electron and Node.js cjs-packages/builtin-modules (Schematic)
 
 ```
-┏———————————————————————————————┓                        ┏—————————————————┓
-│ import { readFile } from 'fs' │                        │ Vite dev server │
-┗———————————————————————————————┛                        ┗—————————————————┛
-                │ 1. Pre-Bundling fs module into                  │
-                │    node_modules/.vite-electron-renderer/fs      │
-                │                                                 │
-                │ 2. HTTP(Request): fs module                     │
-                │ ——————————————————————————————————————————————> │
-                │                                                 │
-                │ 3. Alias redirects to                           │
-                │    node_modules/.vite-electron-renderer/fs      │
-                │    ↓                                            │
-                │    const { readFile } = require('fs')           │
-                │    export { readFile }                          │
-                │                                                 │
-                │ 4. HTTP(Response): fs module                    │
-                │ <—————————————————————————————————————————————— │
-                │                                                 │
-┏———————————————————————————————┓                        ┏—————————————————┓
-│ import { readFile } from 'fs' │                        │ Vite dev server │
-┗———————————————————————————————┛                        ┗—————————————————┛
+ ┏————————————————————————————————————————┓                 ┏—————————————————┓
+ │ import { ipcRenderer } from 'electron' │                 │ Vite dev server │
+ ┗————————————————————————————————————————┛                 ┗—————————————————┛
+                 │                                                   │
+                 │ 1. Pre-Bundling electron module into              │
+                 │    node_modules/.vite-electron-renderer/electron  │
+                 │                                                   │
+                 │ 2. HTTP(Request): electron module                 │
+                 │ ————————————————————————————————————————————————> │
+                 │                                                   │
+                 │ 3. Alias redirects to                             │
+                 │    node_modules/.vite-electron-renderer/electron  │
+                 │    ↓                                              │
+                 │    const { ipcRenderer } = require('electron')    │
+                 │    export { ipcRenderer }                         │
+                 │                                                   │
+                 │ 4. HTTP(Response): electron module                │
+                 │ <———————————————————————————————————————————————— │
+                 │                                                   │
+ ┏————————————————————————————————————————┓                 ┏—————————————————┓
+ │ import { ipcRenderer } from 'electron' │                 │ Vite dev server │
+ ┗————————————————————————————————————————┛                 ┗—————————————————┛
 ```
 
 ###### Electron-Renderer(vite build)
@@ -109,9 +130,9 @@ export interface RendererOptions {
 2. Modify `rollupOptions.output.format` to `cjs` *(If it you didn't explicitly set it)*.
 
 ```js
-import { readFile } from 'fs'
+import { ipcRenderer } from 'electron'
 ↓
-const { readFile } = require('fs')
+const { ipcRenderer } = require('electron')
 ```
 
 ## Dependency Pre-Bundling
