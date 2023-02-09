@@ -1,10 +1,10 @@
 {
-  "name": "vite-plugin-electron-renderer-quick-start",
+  "name": "@sillot/vite-plugin-electron-renderer-quick-start",
   "version": "0.0.0",
   "main": "dist-electron/main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-vite/vite-plugin-electron-renderer.git",
+    "url": "git+https://github.com/Hi-Windom/vite-plugin-electron-renderer.git",
     "directory": "examples/quick-start"
   },
   "author": "草鞋没号 <308487730@qq.com>",

@@ -1,10 +1,10 @@
 {
-  "name": "vite-plugin-electron-renderer-worker",
+  "name": "@sillot/vite-plugin-electron-renderer-worker",
   "version": "0.0.0",
   "main": "dist-electron/main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-vite/vite-plugin-electron-renderer.git",
+    "url": "git+https://github.com/Hi-Windom/vite-plugin-electron-renderer.git",
     "directory": "examples/worker"
   },
   "author": "草鞋没号 <308487730@qq.com>",
